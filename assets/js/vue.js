@@ -25,17 +25,22 @@ createApp({
         // input da utente
         inputText: '',
 
+        myText : '',
+
         todos: [
         {
             text: 'Fare i compiti',
+            show : false,
             done: false
         },
         {
             text: 'Fare la spesa',
+            show : false,
             done: true
         },
         {
             text: 'Fare il bucato',
+            show : false,
             done: false
         }
         ]
@@ -66,6 +71,16 @@ createApp({
 
         deleteElement(i){
             this.todos.splice(i, 1)
+        },
+
+        textMod(i){
+            this.todos[i].show = true
+            this.todos[i].text = ''
+        },
+
+        addInput(i){
+            this.todos[i].show = false
+            this.todos[i].text = this.myText
         }
     }
   }).mount('#app')
