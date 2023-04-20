@@ -55,5 +55,13 @@ createApp({
                 this.soldier = true
             }
         },
+
+        changeDone(i){
+            if (this.todos[i].done != true) {
+                this.todos[i].done = true
+            } else{
+                this.todos[i].done = false
+            }
+        }
     }
   }).mount('#app')
