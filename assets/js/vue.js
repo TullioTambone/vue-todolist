@@ -62,6 +62,10 @@ createApp({
             } else{
                 this.todos[i].done = false
             }
+        },
+
+        deleteElement(i){
+            this.todos.splice(i, 1)
         }
     }
   }).mount('#app')
