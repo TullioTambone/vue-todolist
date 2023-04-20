@@ -14,11 +14,13 @@
 <body>
     <div id="app" class="m-4">
         <div class="container">
+            <!--titolo-->
             <h1 class="text-center">Vue To Do List</h1>
+
             <div class="text-center">
-                <input type="text">
-                <button>crea Todo</button>
-                <p>alert</p>
+                <input type="text" v-model="inputText">
+                <button @click="addTodo">crea Todo</button>
+                <p v-if="soldier" class="alert alert-danger" role="alert">inserisci un input</p>
             </div>
 
             <div class="bg-light rounded">

@@ -20,6 +20,11 @@ const{createApp} = Vue
 createApp({
     data() {
       return {
+        // variabile di controllo
+        soldier: false,
+        // input da utente
+        inputText: '',
+
         todos: [
         {
             text: 'Fare i compiti',
@@ -37,6 +42,18 @@ createApp({
       }
     },
     methods: {
-
+        addTodo(){
+            if(this.inputText != ''){
+                let myInput = {
+                    text: this.inputText,
+                    done: false
+                }
+                this.todos.unshift(myInput)
+                this.inputText = ''
+                this.soldier = false
+            } else{
+                this.soldier = true
+            }
+        },
     }
   }).mount('#app')
